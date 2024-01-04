@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title></title>
+    {% endblock %}
+    <link href="{{ url_for('static', filename='css/style.css') }}"rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/dd307a4d09.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="navbar">
+        <div class="costom-navbar" >
+            <div class="logo-header"><a href="/"><img src="{{ url_for('static', filename='image/LOGO.png') }}" alt="logo" id="logo"></a></div>
+            <div class="navigation-header">
+                <a href="/ticket">Đặt vé</a>
+                <a href="#">Trợ giúp</a>
+                <a href="#">About us</a>
+            </div>
+            
+            <!-- trang chủ khi chưa có ai đăng nhập -->
+            
+            <!-- <div class="bt-login-register-logout">
+                <a href="/register_user">Sign up</a>
+                <a href="/login_user">Login</a>
+            </div> -->
+
+            <!-- trang chủ khi có người đăng nhập -->
+
+            <div class="bt-login-register-logout">
+                <a href="/profile_user"><img src="{{ url_for('static', filename='image/avata.png') }}" id="avata" alt="avata"></a>
+                <a href="#">Log out</a>
+            </div>
+
+        </div>
+    </header>
+
+{% block content %}
+
+{% endblock %}
+  
+    <!-- nội dùng cuối -->
+    <!-- nội dung footer -->
+    <footer>
+        <p>&copy; Copyright 2024 Bai Tap Lon. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='javascript/javascript.js') }}"></script>
+</body>
+</html>

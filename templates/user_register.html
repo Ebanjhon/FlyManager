@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng Ký tài khoản</title>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        background-image: url('/static/image/BGLogin.jpg');
+        background-size: cover;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    label, p{
+        font-size: 21px;
+    }
+
+    input{
+        font-size: 20px;
+        padding: 10px;
+        border: 1px solid #6f6f6f;
+        border-radius: 5px;
+        box-sizing: border-box;
+        padding-left: 30px;
+    }
+
+    input:focus{
+        outline: 1px solid  #049afe;
+    }
+
+    h2{
+        line-height: 90px;
+        font-size: 35px;
+    }
+
+    .container{
+        width: 650px;
+        margin:16px auto;
+    }
+
+    .content{
+        background-color: white;
+        height: 660px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2{
+        text-align: center;
+    }
+
+
+    .register-Form{
+        width: auto;
+        /* background-color: aqua; */
+        margin: auto 20px;
+        height: 400px;
+    }
+
+    .pass-button, .first-last-name, .birtday-gender, .gender, .email-number{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        align-items: center;
+    }
+    
+    .user-name, .address{
+        height: 80px;
+    }
+
+    .address div input{
+        width: 100%;
+    }
+
+    .gender{
+        align-items: center;
+        display: flex;
+        width: 35%;
+    }
+
+    .gender input[type="radio"] {
+      transform: scale(2);
+      margin-right: 10px;
+    }
+
+    .pass-button{
+        width: auto;
+        height: auto;
+    }
+
+    .button{
+        width: 140px;
+        height: 70px;
+        background-color: #007bff;
+        display: flex;
+        border-radius: 7px;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .button:hover{
+        background-color: #2da9fc;
+    }
+    
+
+    a{
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #777;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>Đăng ký tài khoản</h2>
+        
+            <form class="register-Form">
+                <div class="first-last-name">
+                    <div>
+                        <label for="">First name</label><br>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Last name</label><br>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="user-name">
+                    <div>
+                        <label for="">User name</label><br>
+                        <input type="text">
+                    </div>
+                </div>
+    
+                <div class="birtday-gender">
+                    <div>
+                        <label for="">Birtday</label><br>
+                        <input type="date">
+                    </div>
+                    <div class="gender">
+                        <p><input type="radio" name="gender" value="1">WOMEN</p>
+                        <p><input type="radio" name="gender" value="2">MEN</p>
+                    </div>
+                </div>
+
+                <div class="address">
+                    <div>
+                        <label for="">Address</label><br>
+                    <input type="text">
+                    </div>
+                </div>
+
+                <div class="email-number">
+                    <div>
+                        <label for="">Email</label><br>
+                        <input type="email">
+                    </div>
+
+                    <div>
+                        <label for="">Phone number</label><br>
+                        <input type="text">
+                    </div>
+                    
+                </div>
+                <div class="pass-button">
+                    <div>
+                        <label for="">Password</label><br>
+                        <input type="password"><br>
+                        <label for="">Password again</label><br>
+                        <input type="password">
+                    </div>
+                    <div class="button">
+                        <a href="" type="submit">Đăng ký</a>
+                    </div>
+                </div>
+                <a href="/" style="color: #777; font-size: 17px; line-height: 30px;">Quay lại</a>
+            </form>
+            
+        </div>
+            
+        <footer>Phần mềm quản lý chuyến bay © 2024 Code bởi MEN TEAM</footer>
+
+    </div>
+</body>
+</html>

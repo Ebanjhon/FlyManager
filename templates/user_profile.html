@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Khách hàng Profile</title>
+    <link href="{{ url_for('static', filename='css/user_profile.css') }}"rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+    <div class="profile-info">
+        <h1>Thông tin của bạn</h1>
+        
+        <table>
+            <tr>
+                <th>Số điện thoại:</th>
+                <td>0123456789</td>
+            </tr>
+            <tr>
+                <th>Tên:</th>
+                <td>Nguyễn Văn A</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>nguyenvana@example.com</td>
+            </tr>
+            <tr>
+                <th>Ngày sinh:</th>
+                <td>01/01/1990</td>
+            </tr>
+            <tr>
+                <th>Giới tính:</th>
+                <td>Nam</td>
+            </tr>
+            <tr>
+                <th>Địa chỉ:</th>
+                <td>123 Đường ABC, Quận XYZ, Thành phố HCM</td>
+            </tr>
+        </table>
+
+        <button class="edit-button" onclick="openEditModal()">Chỉnh sửa thông tin cá nhân</button>
+
+        <h2>Lịch sử giao dịch</h2>
+        <div class="list-transaction">
+            <table>
+                <tr>
+                    <th>Ngày giao dịch</th>
+                    <th>Mã vé</th>
+                    <th>Điểm xuất phát</th>
+                    <th>Điểm đến</th>
+                </tr>
+    
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+    
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+    
+                <tr>
+                    <td>2024-01-01</td>
+                    <td>ABC123</td>
+                    <td>Hà Nội</td>
+                    <td>Hồ Chí Minh</td>
+                </tr>
+    
+            </table>
+        </div>
+        
+    </div>
+    
+    <div class="avatar-container avata" id="avatarContainer" onclick="openFileInputForEdit()">
+        <img src="{{ url_for('static', filename='image/avata.png') }}" alt="Avatar của khách hàng" id="avatarImage">
+        <p>Nguyễn Văn A</p>
+        <span class="upload-text" id="uploadText" onmouseover="showUploadText()" onmouseout="hideUploadText()" onclick="openFileInputForEdit()">Thay đổi ảnh đại diện</span>
+        <input type="file" accept="image/*" class="upload-input" id="fileInputForEdit" onchange="displaySelectedImageForEdit()">
+    </div>
+
+    <div class="edit-modal" id="editModal">
+        <div class="modal-content">
+            <h2>Chỉnh sửa thông tin cá nhân</h2>
+            <form id="editForm">
+
+                <div class="form-group">
+                    <label for="editAvatar">Ảnh đại diện:</label>
+                    <input type="file" accept="image/*" id="editAvatar" name="avatar" onchange="displaySelectedImageForEdit()">
+                </div>
+    
+                <div class="avatar-container" id="editedAvatarContainer">
+                    <img src="{{ url_for('static', filename='image/avata.png') }}" alt="Avatar của khách hàng" id="editedAvatarImage" style="width: 100px; height: 100px; margin: auto; padding: 0;">
+                    <span class="upload-text" id="editedUploadText" onmouseover="showUploadTextForEdit()" onmouseout="hideUploadTextForEdit()" onclick="openFileInputForEdit()">Thay đổi ảnh đại diện</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="editName">Tên:</label>
+                    <input type="text" id="editName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="editDOB">Ngày sinh:</label>
+                    <input type="date" id="editDOB" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="editGender">Giới tính:</label>
+                    <select id="editGender" name="gender">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editAddress">Địa chỉ:</label>
+                    <input type="text" id="editAddress" name="address" required>
+                </div>
+                
+                <button type="button" onclick="saveChanges()" class="form-group-button">Lưu thay đổi</button>
+                <button type="button" onclick="closeEditModal()" class="form-group-button">Hủy</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function openEditModal() {
+        document.getElementById("editModal").style.display = "flex";
+    }
+
+    function closeEditModal() {
+        document.getElementById("editModal").style.display = "none";
+    }
+
+    function saveChanges() {
+        // Xử lý lưu thay đổi ở đây
+        alert("Thay đổi đã được lưu!");
+        closeEditModal();
+    }
+
+    function showUploadText() {
+        document.getElementById("uploadText").style.display = "block";
+    }
+
+    function hideUploadText() {
+        document.getElementById("uploadText").style.display = "none";
+    }
+
+    function openFileInput() {
+        document.getElementById("fileInput").click();
+    }
+
+    function displaySelectedImage() {
+        var input = document.getElementById("fileInput");
+        var image = document.getElementById("avatarImage");
+
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            image.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+
+        hideUploadText(); // Ẩn chữ "Chọn ảnh đại diện" sau khi đã chọn ảnh
+    }
+
+    function openFileInputForEdit() {
+        document.getElementById("fileInputForEdit").click();
+    }
+
+    function showUploadTextForEdit() {
+        document.getElementById("editedUploadText").style.display = "block";
+    }
+
+    function hideUploadTextForEdit() {
+        document.getElementById("editedUploadText").style.display = "none";
+    }
+
+    function displaySelectedImageForEdit() {
+        var input = document.getElementById("editAvatar");
+        var image = document.getElementById("editedAvatarImage");
+
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            image.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+
+        hideUploadTextForEdit();
+    }
+</script>
+{% endblock %}

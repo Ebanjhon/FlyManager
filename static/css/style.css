@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,400;1,500&family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+/* phan navbar */
+header{
+    position: relative;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    transition: 0.4s;
+    justify-content: center;
+    box-shadow: 0 4px 7.3px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    z-index: 99;
+    transition: 0.4s;
+    padding: 20px 10px;
+    top: 0px;
+}
+
+.costom-navbar{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.4s;
+    /* background-color: #fb6767; */
+}
+
+.logo-header a img{
+    width: 100px;
+    height: auto;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.navigation-header{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    transition: 0.4s;
+}
+
+.navigation-header a{
+    /* width: 130px; */
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    font-weight: bold;
+    /* color: #3498db; */
+}
+
+.navigation-header a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Độ dày của gạch chân */
+    bottom: 0;
+    left: 0;
+    background-color: black; /* Màu của gạch chân */
+    visibility: hidden;
+    transform: scaleX(0); /* Đầu tiên, gạch chân không có chiều rộng */
+    transition: all 0.3s ease-in-out; /* Hiệu ứng chuyển động */
+}
+
+.navigation-header a:hover::before {
+    visibility: visible;
+    transform: scaleX(1); /* Mở rộng gạch chân theo chiều rộng */
+}
+
+.bt-login-register-logout{
+    display: flex;
+    gap: 15px;
+    font-size: 27px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: medium;
+    border: none;
+    align-items: center;
+}
+
+.bt-login-register-logout a{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.bt-login-register-logout a:last-child{
+    border-radius: 30px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.bt-login-register-logout a:last-child:hover{
+    background-color: #023373;
+    color: #fff;
+    transition: background-color 0.3s ease-out;
+}
+
+.bt-login-register-logout img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-items: center;
+    margin-top: -9px;
+    transition: 0.4s;
+}
+
+footer{
+    width: 100%;
+}
+
+footer p{
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    line-height: 39px;
+    font-family: 'Roboto Mono', monospace;
+}
+

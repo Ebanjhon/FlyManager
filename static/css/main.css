@@ -1,0 +1,449 @@
+body{
+    height: 100%;
+    margin: 0;
+    font-family:'Roboto', sans-serif;
+    color: #000;
+    background-image: url('/static/image/BGLogin.jpg');
+    background-size: cover;
+}
+
+
+/* TAB CONTROL */
+.tab-control-main{
+    width: 80%;
+    display: flex;
+    justify-content: space-around   ;
+    padding: 10px;
+}
+
+.tabcontent {
+    display: none;
+  }
+  
+  /* Định dạng cho các nút */
+  .tablink {
+    cursor: pointer;
+    width: 30%;
+  }
+  
+  /* Định dạng cho nút đang hoạt động */
+  .active {
+    background-color:#006cb5;
+    color: white;
+  }
+
+
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+.login-content {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 30px;
+
+}
+
+.input-group input:focus{
+    outline: 1px solid  #049afe;;
+
+}
+/* .text-forgot{
+    font-size: 13px;
+    padding-top: 10px;
+    padding-right: 2px;
+    text-align: right;
+    color: #000000 !important;
+} */
+
+
+
+footer {
+    margin-top: 30px;
+    color: #777;
+}
+
+
+
+/* icon show pass */
+.input-group input[type="password"] {
+    padding-right: 40px; /* Đặt padding phải để tạo chỗ cho nút toggle */
+}
+.input-group{
+    position: relative;
+}
+.show-pass-icon {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+
+}
+.password-icon{
+    position: absolute;
+    left: 9px;
+    top: 26%;
+}
+.username-icon{
+    position: absolute;
+    left: 9px;
+    top: 25%;
+}
+/* CSS EMPLOYEEMAIN */
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    background: url('/img/BGLogin.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.header-main {
+    text-align: center;
+}
+
+.navigation-main {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+.search-main {
+    border-radius: 20px;
+    border: none;
+    margin: 0% 5% 0% 5%  ;
+    height: auto;
+    padding: 20px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.search-main label {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.search-section input[type="text"],
+.search-section input[type="date"],
+.search-section input[type="number"] {
+    margin-bottom: 10px;
+}
+
+.passenger {
+    margin-bottom: 10px;
+}
+
+.passenger label {
+    display: block;
+}
+
+.passenger input {
+    width: 50px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+.nav-btn{
+    width: 20%;
+}
+
+
+/* From To cuss */
+
+.f_to-container{
+    width: 100%;
+    text-align: center;
+}
+
+.f_to-select{
+    width: 40%;
+    outline: none;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+}
+
+.select-costom{
+    position: relative;
+    width: 45%;
+}
+.select-costom-chose{
+    position: absolute;
+}
+.select-costom div{
+    width: auto;
+    height: 45px;
+    padding: 0 16px;
+    background-color: rgb(255, 255, 255);
+    border: solid 4px #0094FF;
+    border-radius: 24px;
+    position: relative;
+}
+.from-to-seat{
+    align-items: center;
+    display: flex;
+    width: 90%;
+    height: 85px;
+    /* background-color: #fff; */
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 20px 0px 20px 0px  
+}
+.select-costom div{
+    width: auto;
+    height: 45px;
+    padding: 0 16px;
+    background-color: rgb(255, 255, 255);
+    border: solid 4px #0094FF;
+    border-radius: 10px;
+    position: relative;
+}
+
+.select-costom div select{
+    /* position: absolute; */
+    line-height: 52px;
+    border: none;
+    outline: none;
+    width: 80%;
+    top: 30%
+    
+}
+
+/* costom icon */
+
+.fa-solid{
+    color: #033E8C;
+}
+
+.select-costom div i{
+    margin-right: 4px;
+    font-size: 21px;
+    line-height: 45px;
+}
+
+.fa-right-left{
+    color:  #2da9fc;
+    font-size: 40px;
+    margin-top: 20px;
+}
+/*  */
+.seat-select{
+    width: 300px;
+}
+
+.seat-select div select{
+    width: 220px;
+}
+
+.from-to-seat-label{
+    font-size: 18px;
+
+}
+/* CHọn chiều  */
+.radio-direction{
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: left;
+}
+.date-control{
+    display: flex;
+    padding: 20px 0px 20px 0px ;
+    width: 90%;
+    margin: auto;
+
+}
+.date-control div{
+    padding-right: 50px;
+}
+
+.date-control div input{
+    border: solid 2px #0094FF;
+    border-radius: 5px;
+
+}
+.passenger-quantity-from-control{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    position: relative;
+    padding: 40px 0px 20px 0px ;
+    height: 40px;
+}
+
+
+.label-passenger-quantity{
+    left: 20px;
+    top: 10px;
+    font-size: 18px;
+    position: absolute;
+    left: 0px;
+}
+.passenger-quantity{
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    left: 40px;
+
+}
+.passenger-quantity-from-control div input{
+    border: solid 2px #0094FF;
+    border-radius: 5px;
+    height: 20px;
+}
+.passenger-quantity-from-control div{
+    margin-right: 50px ;
+}
+.seat-class-from{
+    padding: 15px 0px 20px 0px;
+    width: 90%;
+    margin: auto;
+}
+
+
+
+.seat-class-contol{
+    font-size: 16px;
+    border: 2px solid rgb(0, 148, 255);
+    border-radius: 5px;
+    width: 40%;
+    height: 30px;
+}
+
+.find-from{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: right;
+    padding: 20px 0px 20px 0px;
+}
+.btn-find{
+    right: 20px;
+    width: 200px;
+    height: 60px;
+    font-size: 18px;
+
+}
+.select-route-option{
+    line-height: 20px;
+    width: 50%;
+}
+.from-select-route{
+    padding: 20px 0px 20px 0px;
+}
+.fight-control{
+    display: flex;
+    justify-content: left;
+    padding: 20px 0px 20px 0px;
+
+}
+.fight-control div{
+    margin-right: 30px;
+}
+.select-route-option {
+    /* position: absolute; */
+    line-height: 52px;
+    border: none;
+    outline: none;
+    width: 80%;
+    top: 30%;
+    border: solid 2px #0094FF;
+    border-radius: 6px;
+    height: 30px;
+}
+.fight-control div select, input{
+    border: solid 2px #0094FF;
+    border-radius: 5px;
+}
+.from-seeting-seat{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: left;
+    padding: 20px 0px 20px 0px ;
+
+    
+}
+
+.from-seeting-seat div input{
+    text-align: right;
+    width: 170px;
+
+}
+
+input:focus {
+    outline: none;
+    border-color: #002f61;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+body:focus{
+    outline: none;
+    border-color: #002f61;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+.fight-control div select,input{
+    font-size: 16px;
+}
+.from-intermediate-airport{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: left;
+    padding-top: 20px;
+    
+}
+.from-intermediate-airport select{
+    font-size: 16px;
+    border: 2px solid rgb(0, 148, 255);
+    border-radius: 5px;
+    width: 40%;
+}
+
+.create-fight-from{
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px 20px 0px;
+    position: relative;
+    height: 100px;
+}
+
+.create-fight-from button{
+    position: absolute;
+    display: block;
+    right: 100px;
+    top: 50px;
+    width: 200px;
+    height: 60px;
+    font-size: 18px;
+}
+
+

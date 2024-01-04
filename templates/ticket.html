@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Đặt vé</title>
+    <link href="{{ url_for('static', filename='css/ticket.css') }}"rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<!-- form chọn lại tuyến bay -->
+<div id="centeredDiv" class="form-search">
+    <div class="form-costome">
+
+        <form action="#">
+            <div class="costome-select-flight">
+                <label for="">From:</label>
+                    <select name="from" id="select-flight">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                    <label for="">To:</label>
+                    <select name="from" id="select-flight">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+            </div>
+
+            <div class="costome_count_ticket">
+                <div class="costome_items">
+                    <label for="">Chọn ngày đi:</label>
+                    <input type="date">
+                </div>
+            </div>
+
+            <div class="costome_count_ticket">
+                <div class="costome_items">
+                    <label for="">Số lượng khách</label>
+                    <input type="number">
+                </div>
+
+                <div class="costome_items">
+                    <label for="">Chọn hạng vé</label>
+                    <select name="from" id="select-flight">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div>
+                <button id="hideButton">Hủy</button>
+                <a href="" type="summit">Tìm chuyến bay</a>
+            </div>
+        </form>
+
+       
+
+    </div>
+</div>
+
+<div class="booking-form">
+    <canvas id="myCanvas" width="600" height="350"></canvas>
+    <div class="from-to-content">
+        <h1>Tp HCM đến Tp Nha Trang</h1>
+        <hr style="width: 300px; margin: auto;">
+        <p>ngày giờ xuất phát</p>
+    </div>
+
+    <div class="filter-content">
+        <div>
+            <label for="time">Giờ cất cánh</label>
+            <br>
+            <select name="time-fly" id="time-fly">
+                <option value="12:30">12:30</option>
+                <option value="12:30">12:30</option>
+                <option value="12:30">12:30</option>
+                <option value="12:30">dsf</option>
+                <option value="12:30">sdf</option>
+                <option value="12:30">dfsg</option>
+            </select>
+        </div>
+        <div>
+            <button>
+                <label for="">Giá giảm dần</label>
+                <p>max-min</p>
+            </button>
+        </div>
+        <div>
+            <button>
+                <label for="">Giá tăng dần</label>
+                <p>min-max</p>
+            </button>
+        </div>
+        <div>
+            <label for="Airline">Hãng bay</label>
+            <br>
+            <select name="Airline" id="Airline">
+                <option value="hảng airline">VN airline</option>
+                <option value="hảng việt ject">vietjeck</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="list-search">
+    <p>Dánh sách chuyến bay</p>
+    <button id="showButton">
+        Tim chuyến bay khác <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+</div>
+
+<div class="list-ticket-order">
+
+    <!-- <p>Không có chuyến nào!</p> -->
+    
+    <div class="list">
+
+        <div class="item">
+            <div class="airline-price">
+                <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+                <h3>Hảng hàng không</h3>
+                <p>Giá; 1.200.000 VND</p>
+            </div>
+            <div class="info-ticket">
+                <div class="info">
+                    <p>Mã máy bay: H123</p>
+                    <p>Trạng thái: còn ghế</p>
+                    <p>Điểm dừng chân: SB1, Sb2</p>
+                </div>
+                <h3>12:00-14:00</h3>
+                <button>Chọn</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="columnSeparator"></div>
+
+    <div class="oder-ticket">
+        <h3>Thông tin đặt chổ</h3>
+        <h4>Tp HCM đến Tp Vũng tàu</h4>
+        <p>thông tin đặt vé</p>
+        <hr>
+        <div>
+            <label for="">Hạng vé:</label>
+            <select name="type-seat" id="seat">
+                <option value="">hạng thương gia</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Giá vé:</label>
+            <p>1.000.000.000 VND</p>
+        </div>
+
+        <div>
+            <label for="">Số lượng người:</label>
+            <input type="number" value="1" min="1">
+        </div>
+
+        <div class="costom-total">
+            <label for="Total-price">Tổng tiền:</label>
+            <p>2.000.000 VND</p>
+        </div>
+
+        <hr>
+
+        <button>Đặt vé</button>
+    </div>
+</div>
+
+<script>
+    // Lấy đối tượng canvas
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    // Chuyển origin (gốc tọa độ) đến trung tâm của canvas
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+
+    // Xoay canvas 30 độ
+    ctx.rotate((130 * Math.PI) / 180);
+
+    // Vẽ hình thoi bo góc
+    var width = 250;
+    var height = 270;
+
+    ctx.beginPath();
+    ctx.moveTo(0, -height / 2); // Điểm đầu tiên trên trục y
+    ctx.lineTo(9990, 100); // Điểm thứ hai trên trục x
+    ctx.lineTo(10, 980); // Điểm thứ ba trên trục y
+    ctx.lineTo(10, 10); // Điểm thứ tư trên trục x
+    ctx.closePath();
+
+    // Vẽ các góc bo tròn
+    var cornerRadius = 20;
+    ctx.arcTo(90, height, 12, 890, cornerRadius);
+    ctx.arcTo(123, 5476, 12, 12, cornerRadius);
+    // ctx.arcTo(-80, 800, 8, 122, cornerRadius);
+    ctx.arcTo(-width / 2, -height / 2, 123, -123, cornerRadius);
+
+    ctx.fillStyle = "#05AFF2"; // Màu sắc của hình thoi
+    ctx.fill();
+
+
+  // bật form chỉnh sửa chuyến bay
+  var centeredDiv = document.getElementById('centeredDiv');
+  var showButton = document.getElementById('showButton');
+  var hideButton = document.getElementById('hideButton');
+
+  // Thêm sự kiện click cho nút hiển thị div
+  showButton.addEventListener('click', function() {
+    document.body.style.overflow = 'hidden';
+    centeredDiv.style.display = 'block';
+    scrollToTop()
+  });
+
+  // Thêm sự kiện click cho nút ẩn div
+  hideButton.addEventListener('click', function() {
+    document.body.style.overflow = 'auto';
+    centeredDiv.style.display = 'none';
+  });
+
+//   hàm cuộn lên đầu trang
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // Cuộn mượt nếu trình duyệt hỗ trợ
+    });
+  }
+  </script>
+{% endblock %}

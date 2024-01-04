@@ -1,0 +1,56 @@
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.margin-l-20{
+    margin-left: 20px;
+}
+
+.width-100{
+    width: 100%;
+}
+.width-90-mg-auto{
+    width: 90%;
+    margin: auto;
+}
+
+.font-lb-18{
+    font-size: 18px;
+}
+select:focus{
+    outline: none;
+
+}
+input:focus{
+    outline: none;
+}
+
+.custome-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.custome-buttons a{
+    background-color: #007bff;
+    width: 130px;
+    height: 40px;
+    font-size: 19px;
+    line-height: 40px;
+    color: white;
+    border-radius: 5px;
+}
+
+.custome-buttons a:hover{
+    background-color: #2da9fc;
+}
+
+.input-group input{
+    font-size: 18px;
+}
+
+.login-content{
+    height: 230px;
+}
+
+/* /phần đăng ký tài khoản người dùng/ */

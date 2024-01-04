@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}
+        <title>Trang chủ</title>
+        <link href="{{ url_for('static', filename='css/home.css') }}"rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div class="hero-container">
+    <div class="content-hero">
+        <div class="radio-button">
+            <!-- <label>
+                <input type="radio" name="displayOption" value="hide" onclick="hideDiv()"> Một chiều
+            </label>
+
+            <label>
+                <input type="radio" name="displayOption" value="show" onclick="showDiv()" checked> Khử hồi
+            </label> -->
+        </div>
+
+        <div class="form-input-search">
+            <form action="#" method="post">
+                <div class="from-to-seat">
+                    <!-- điểm đi -->
+                    <div class="select-costom">
+                        <label for="from">From</label><br>
+                        <div>
+                            <i class="fa-solid fa-plane-departure icon-costom"></i>
+                            <select name="from">
+                                <option value="HCM">TP HCM</option>
+                                <option value="HCM">TP HCM</option>
+                                <option value="HCM">TP HCM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <i class="fa-solid fa-right-left"></i>
+                    <!-- điểm đến -->
+                    <div class="select-costom">
+                        <label for="to">To</label><br>
+                        <div>
+                            <i class="fa-solid fa-plane-arrival"></i>
+                            <select name="to">
+                                <option value="HCM">TP HCM</option>
+                                <option value="HCM">TP HCM</option>
+                                <option value="HCM">TP HCM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- loại ghế -->
+                    <div class="seat-select select-costom">
+                        <label for="seat">Seat</label><br>
+                        <div>
+                            <i class="fa-solid fa-ticket"></i>
+                            <select name="seat">
+                                <option value="HCM">hạng thương gia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- điền thông tin ngày và đăt -->
+                <div class="date-search">
+
+                    <div>
+                        <label for="depart">Ngày đi</label><br>
+                        <div class="custom-date-input-container">
+                            <input type="date">
+                        </div>
+                    </div>
+
+                    <div id="myDiv" class="hidden">
+                        <label for="depart">Số lượng người</label><br>
+                        <div class="custom_count_ticket">
+                            <input type="number" value="1" min="1">
+                        </div>
+                    </div>
+                    
+                    <a href="{{ url_for('ticket') }}">TÌM CHUYẾN</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- cac content -->
+<div class="slider-container">
+    <div class="slider">
+      <div class="slide"><img src="https://images.unsplash.com/photo-1613324942930-3f2f94f0856e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1"></div>
+              <div class="slide"><img src="https://plus.unsplash.com/premium_photo-1675805015392-28fd80c551ec?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1"></div>
+    </div>
+    <div class="dot-container"></div>
+</div>
+<!-- các đỉa điểm du lịch -->
+
+<div class="TravelSpot-container">
+
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+    <div class="TravelSpot">
+        <img src="{{ url_for('static', filename='image/h1.jpg') }}" alt="hinh">
+        <div>
+            <h2>TUOR</h2>
+            <p>Na Ba Hill</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

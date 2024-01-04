@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đăng nhập</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+<!-- font -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+<style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    font-family:'Roboto', sans-serif;
+    color: #000;
+    
+}
+
+
+/* TAB CONTROL */
+.tab-control-main{
+    width: 80%;
+    display: flex;
+    justify-content: space-around   ;
+    padding: 10px;
+}
+
+.tabcontent {
+    display: none;
+  }
+  
+  /* Định dạng cho các nút */
+  .tablink {
+    cursor: pointer;
+    width: 30%;
+  }
+  
+  /* Định dạng cho nút đang hoạt động */
+  .active {
+    background-color:#006cb5;
+    color: white;
+  }
+
+
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    background: url('/img/BGLogin.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-content {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 30px;
+
+}
+
+.input-group input:focus{
+    outline: 1px solid  #049afe;
+}
+.text-forgot{
+    width: auto;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-right: 2px;
+    text-align: right;
+    color: #000000 !important;
+}
+
+
+footer {
+    margin-top: 30px;
+    color: #777;
+}
+
+
+
+/* icon show pass */
+.input-group input[type="password"] {
+    padding-right: 40px; /* Đặt padding phải để tạo chỗ cho nút toggle */
+}
+.input-group{
+    position: relative;
+}
+.show-pass-icon {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+
+}
+.password-icon{
+    position: absolute;
+    left: 9px;
+    top: 26%;
+}
+.username-icon{
+    position: absolute;
+    left: 9px;
+    top: 25%;
+}
+/* neu co loi */
+#error-container {
+    /* display: none; */
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #cc6666; /* Màu đỏ */
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 200px; /* Điều chỉnh kích thước tối đa của khung thông báo */
+}
+
+#close-btn {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff; /* Màu chữ của nút đóng */
+    margin: auto 20px;
+}
+
+#close-btn:hover {
+        color: #e5e5e5; /* Màu chữ khi di chuột vào nút đóng */
+}
+</style>
+</head>
+<body>
+
+    <!-- <div id="error-container">
+        <p>
+            Incorrect password. Please try again.
+            <span id="close-btn" onclick="closeError()">X</span>
+        </p>
+    </div>   -->
+
+    <div class="login-container" >
+        <div class="login-content">
+            <h2>Wellcome</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Nhập tài khoản" required>
+                    <span class="username-icon">
+                        <i class='bx bx-user'></i>
+                    </span>
+                </div>
+                <div class="input-group">
+                    <input class="" id="password" type="password" placeholder="Nhập mật khẩu" required>
+                    <!-- icon -->
+                    
+                    <span class="password-icon">
+                        <i class="bx bx-key"></i>
+                    </span>
+                </div>
+                <div class="custome-buttons">
+                    <a href="/register_user">Đăng ký</a>
+                    <a href="/">Đăng nhập</a>
+        
+                </div>            
+                <div  class="text-forgot">
+                    <a href="/" style="color: #777; font-size: 17px; line-height: 30px; margin-right: 200px;">Quay lại</a>
+                    <a  style="color: black" href="#" id="forgotPassword">Bạn quên mật khẩu?</a>
+                </div>
+                </div>
+            </form>
+        
+        <footer>
+            Phần mềm quản lý chuyến bay © 2024 Code bởi MEN TEAM
+        </footer>
+    </div>
+    <script>
+        function checkPassword() {
+            // Replace this with your password validation logic
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "yourCorrectPassword";
+    
+            if (enteredPassword !== correctPassword) {
+                showError();
+            } else {
+                // Password is correct, proceed with your logic
+                alert("Login successful!");
+            }
+        }
+    
+        function showError() {
+            var errorContainer = document.getElementById("error-container");
+            errorContainer.style.display = "block";
+        }
+    
+        function closeError() {
+            var errorContainer = document.getElementById("error-container");
+            errorContainer.style.display = "none";
+        }
+    </script>
+</body>
+</html>
